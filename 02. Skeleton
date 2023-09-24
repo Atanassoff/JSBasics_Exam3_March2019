@@ -1,0 +1,14 @@
+function demo(input){
+    let contr = Number(input[0]) * 60 + Number(input[1]); 
+    let m = Number(input[2]);
+    let sec = Number(input[3]);
+    let time = m / 100 * sec - m / 120 * 2.5;
+    let diff = Math.abs(time - contr);
+    if(contr >= time){
+    console.log(`Marin Bangiev won an Olympic quota!`);
+    console.log(`His time is ${time.toFixed(3)}.`);
+    }
+    else{
+    console.log(`No, Marin failed! He was ${diff.toFixed(3)} second slower.`);
+    }
+}
