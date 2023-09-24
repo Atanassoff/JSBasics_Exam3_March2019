@@ -1,0 +1,28 @@
+function demo(input){
+    let record = Number(input[0]);
+    let start = record - 30;
+    let jump = 0;
+    let jumpCount = 0;
+    let badJump = 0;
+    let i = 0;
+    while(start <=record){
+        i++;
+        jump = Number(input[i]);
+        jumpCount++;
+        if(jump > start){
+            if(start >= record){
+                console.log(`Tihomir succeeded, he jumped over ${start}cm after ${jumpCount} jumps.`)
+                return;
+            }
+            start += 5;
+            badJump = 0;
+        } 
+        else{
+            badJump++;
+            if(badJump == 3){
+                console.log(`Tihomir failed at ${start}cm after ${jumpCount} jumps.`);
+                return;
+            }
+        }
+    } 
+}
