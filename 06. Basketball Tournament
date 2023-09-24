@@ -1,0 +1,30 @@
+function demo(input){
+    let tourn = "";
+    let num = 0;
+    let ourSc = 0; let theirSc = 0;
+    let wins = 0; let losts = 0;
+    let i = 0;
+    while((tourn = input[i]) != "End of tournaments"){
+        i++;
+        num = Number(input[i]);
+        let count = 0;
+        for(j = 1; j <= (num * 2); j += 2){
+            count++;
+            i++;
+            ourSc = Number(input[i]);
+            i++; 
+            theirSc = Number(input[i]);
+            if(ourSc > theirSc){
+                console.log(`Game ${count} of tournament ${tourn}: win with ${ourSc - theirSc} points.`);
+                wins++;
+            }
+            else if(theirSc > ourSc){
+                console.log(`Game ${count} of tournament ${tourn}: lost with ${theirSc - ourSc} points.`);
+                losts++;
+            } 
+        }
+        i++;
+    }
+    console.log(`${(wins / (wins + losts) * 100).toFixed(2)}% matches win`);
+    console.log(`${(losts / (wins + losts) * 100).toFixed(2)}% matches lost`);
+}
