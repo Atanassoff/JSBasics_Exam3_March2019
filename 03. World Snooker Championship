@@ -1,0 +1,70 @@
+function demo(input){
+    let stage = input[0];
+    let ticket = input[1];
+    let num = Number(input[2]);
+    let photo = input[3];
+    let price = 0; let newPrice = 0; 
+    switch(stage){
+        case"Quarter final":
+        switch(ticket){
+            case"Standard":
+            price = num * 55.50;
+            break;
+            case"Premium":
+            price = num * 105.20;
+            break;
+            case"VIP":
+            price = num * 118.90;
+            break;
+            default:
+            break;
+        }
+        break;
+        case"Semi final":
+        switch(ticket){
+            case"Standard":
+            price = num * 75.88;
+            break;
+            case"Premium":
+            price = num * 125.22;
+            break;
+            case"VIP":
+            price = num * 300.40;
+            break;
+            default:
+            break;
+        }
+        break;
+        case"Final":
+        switch(ticket){
+            case"Standard":
+            price = num * 110.10;
+            break;
+            case"Premium":
+            price = num * 160.66;
+            break;
+            case"VIP":
+            price = num * 400;
+            break;
+            default:
+            break;
+        }
+        break;
+        default:
+        break;
+    }
+    if(price > 4000){
+        newPrice = price * 0.75;
+    }
+    else if(price > 2500 && price <= 4000){
+        newPrice = price * 0.9;
+    }
+    else{newPrice = price;}
+    if(photo == "Y" && price > 2500 && price <= 4000){
+        newPrice += (num * 40);
+    }
+    else if(photo == "Y" && price <= 2500){
+        newPrice = price + num * 40;
+    }
+    console.log(newPrice.toFixed(2));
+}
