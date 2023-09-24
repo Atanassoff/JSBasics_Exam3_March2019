@@ -1,0 +1,10 @@
+function demo(input){
+let racketPrice = Number(input[0]);
+let racketNum = Number(input[1]);
+let shoesNum = Number(input[2]);
+let price = racketPrice * racketNum + (racketPrice / 6 * shoesNum);
+price *= 1.2;
+let djok = price / 8; let spons = price / 8 * 7;
+console.log(`Price to be paid by Djokovic ${Math.floor(djok)}`);
+console.log(`Price to be paid by sponsors ${Math.ceil(spons)}`);
+}
