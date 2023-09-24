@@ -1,0 +1,9 @@
+function demo(input){
+let  rent = Number(input[0]);
+let  shoes = rent * 0.6;
+let outfit = shoes * 0.8;
+let ball = outfit / 4;
+let rest = ball / 5;
+let total = rent + shoes + outfit + ball + rest;
+console.log(total.toFixed(2));
+}
