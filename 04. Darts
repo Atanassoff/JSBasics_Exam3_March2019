@@ -1,0 +1,42 @@
+function demo(input){
+    let name = input[0];
+    let multiplier = "";
+    let points = 301;
+    let currentPoints = 0;
+    let succesful = 0; let unsuccesful = 0;
+    let won = false;
+    let i = 1;
+    while((multiplier = input[i]) != "Retire"){
+        i++;
+        currentPoints = Number(input[i]);
+        switch(multiplier){
+            case"Single":
+            if(points >= currentPoints){
+                points -= currentPoints;
+                succesful++;
+            }
+            else if(points < currentPoints){unsuccesful++;}
+            break;
+            case"Double":
+            if(points >= (2 * currentPoints)){
+                points -= (2 * currentPoints);
+                succesful++;
+            }
+            else if(points < 2 * currentPoints){unsuccesful++;}
+            break;
+            case"Triple":
+            if(points >= (3 * currentPoints)){
+                points -= (3 * currentPoints);
+                succesful++;
+            }
+            else if(points < 3 * currentPoints){unsuccesful++;}
+            break;
+            default:
+            break;
+        }
+        if(points == 0){won = true; break;}
+        i++;
+    }
+    if(won == true){console.log(`${name} won the leg with ${succesful} shots.`);}
+    else{console.log(`${name} retired after ${unsuccesful} unsuccessful shots.`);}
+}
