@@ -1,0 +1,28 @@
+function demo(input){
+    let player1 = input[0];
+    let player2 = input[1];
+    let points1 = 0; let points2 = 0;
+    let card1 = 0; let card2 = 0;
+    let nWars = false;
+    let i = 2;
+    while(input[i] != "End of game"){
+        card1 = Number(input[i]);
+        i++;
+        card2 = Number(input[i]);
+        if(card1 > card2){points1 += (card1 - card2);}
+        else if(card1 < card2){points2 += (card2 - card1);}
+        else if(card1 == card2){console.log(`Number wars!`); nWars = true; i++; break;}
+        i++;
+    }
+    if(nWars == true){
+        card1 = Number(input[i]);
+        i++;
+        card2 = Number(input[i]);
+        if(card1 > card2){console.log(`${player1} is winner with ${points1} points`);}
+        else if(card2 > card1){console.log(`${player2} is winner with ${points2} points`);}
+    }
+    else{
+        console.log(`${player1} has ${points1} points`);
+        console.log(`${player2} has ${points2} points`);
+    }
+}
